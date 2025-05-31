@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Play Video</title>
+<style>
+    /* Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        height: 250px;
+        width: 300px;
+        overflow: hidden;
+      }
+      .container {
+        height: 250px;
+        width: 300px;
+        position: relative;
+        overflow: hidden;
+        background-image: url("./bg.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+        /* Shared image style */
+        .container img {
+        position: absolute;
+        display: block;
+        max-width: 100%;
+        height: auto;
+        }
+
+        /* Individual Elements – Position them as needed */
+        .aloevera {
+        top: 210px;
+        left: 0px;
+        }
+
+        .center {
+        top: 70px;
+        left: 120px;
+        z-index: 5;
+        }
+
+        .coconut_sliced {
+        top: 205px;
+        left: 113px;
+        z-index: 7;
+        }
+
+        .flower {
+        top: 205px;
+        left: 0px;
+        }
+
+        .left {
+        top: 80px;
+        left: 123px;
+        z-index:1;
+        }
+
+        .logo {
+        top: 5px;
+        left: 10px;
+        }
+
+        .nut {
+        top: 205px;
+        left: 175px;
+        z-index: 7;
+        }
+
+        .oil {
+        top: 80px;
+        width:230px;
+        left:70px;
+        position: absolute;
+        }
+
+        .olives {
+        top: 0px;
+        left: 250px;
+        width:50px;
+        }
+
+        .podium {
+        bottom: 0;
+        left: 60px;
+        z-index: 6;
+        }
+
+        .right {
+        top: 80px;
+        left: 119px;
+        z-index: 1;
+        }
+
+        .single_aloevera {
+        top: 150px;
+        left: 205px;
+        }
+
+        .text1 {
+        top: 25px;
+        left: 90px;
+        position:absolute;
+        }
+
+        .text2 {
+        top: 45px;
+        left: 120px;
+        }
+</style>
+</head>
+<body>
+  <div class="container">
+    <img src="./aloevera.png" alt="" class="aloevera" />
+    <img src="./center.png" alt="" class="center" />
+    <img src="./coconut_sliced.png" alt="" class="coconut_sliced" />
+    <img src="./flower.png" alt="" class="flower" />
+    <img src="./left.png" alt="" class="left" />
+    <img src="./logo.png" alt="" class="logo" />
+    <img src="./nut.png" alt="" class="nut" />
+    <img src="./oil.png" alt="" class="oil" />
+    <img src="./olives.png" alt="" class="olives" />
+    <img src="./podium.png" alt="" class="podium" />
+    <img src="./right.png" alt="" class="right" />
+    <img src="./single_aloevera.png" alt="" class="single_aloevera" />
+    <img src="./text1.png" alt="" class="text1" />
+    <img src="./text2.png" alt="" class="text2" />
+  </div>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+    tl.to(right, {
+      rotation: -20,
+      
+      duration: 0.6,
+      ease: "power2.inOut",
+      onStart: () => {
+        right.style.display = "block";
+      }
+    }, "-=0.6")
+      tl.to(right, {
+      rotation: 0,
+      
+      duration: 0.6,
+      ease: "power2.inOut",
+      onStart: () => {
+        right.style.display = "block";
+      }
+    }, "-=0.");
