@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Play Video</title>
+<style>
+    /* Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        height: 250px;
+        width: 300px;
+        overflow: hidden;
+      }
+      .container {
+        height: 250px;
+        width: 300px;
+        position: relative;
+        overflow: hidden;
+        background-image: url("./bg.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+        /* Shared image style */
+        .container img {
+        position: absolute;
+        max-width: 100%;
+        height: auto;
+        }
+
+        /* Individual Elements – Position them as needed */
+        .aloevera {
+        top: 210px;
+        left: 0px;
+        }
+
+        .center {
+        top: 70px;
+        left: 120px;
+        z-index: 5;
+        }
+
+        .coconut_sliced {
+        top: 205px;
+        left: 113px;
+        z-index: 7;
+        }
+
+        .flower {
+        top: 205px;
+        left: 0px;
+        }
+
+        .left {
+        top: 80px;
+        left: 123px;
+        transform-origin: bottom center;
+        z-index:1;
+        }
+
+        .logo {
+        top: 5px;
+        left: 10px;
+        }
+
+        .nut {
+        top: 205px;
+        left: 175px;
+        z-index: 7;
+        }
+
+        .oil {
+        top: 80px;
+        width:230px;
+        left:70px;
+        position: absolute;
+        }
+
+        .olives {
+        top: 0px;
+        left: 250px;
+        width:50px;
+        }
+
+        .podium {
+        bottom: 0;
+        left: 60px;
+        z-index: 6;
+        }
+
+        .right {
+        top: 80px;
+        left: 119px;
+        transform-origin: bottom center;
+        z-index: 1;
+        }
+
+        .single_aloevera {
+        top: 150px;
+        left: 160px;
+        display:none;
+        }
+
+        .text1 {
+        top: 25px;
+        left: 90px;
+        position:absolute;
+        }
+
+        .text2 {
+        top: 45px;
+        left: 120px;
+        }
+</style>
+</head>
+<body>
+  <div class="container">
+    <img src="./aloevera.png" alt="" class="aloevera" />
+    <img src="./center.png" alt="" class="center" />
+    <img src="./coconut_sliced.png" alt="" class="coconut_sliced" />
+    <img src="./flower.png" alt="" class="flower" />
+    <img src="./left.png" alt="" class="left" />
+    <img src="./logo.png" alt="" class="logo" />
+    <img src="./nut.png" alt="" class="nut" />
+    <img src="./oil.png" alt="" class="oil" />
+    <img src="./olives.png" alt="" class="olives" />
+    <img src="./podium.png" alt="" class="podium" />
+    <img src="./right.png" alt="" class="right" />
+    <img src="./single_aloevera.png" alt="" class="single_aloevera" />
+    <img src="./text1.png" alt="" class="text1" />
+    <img src="./text2.png" alt="" class="text2" />
+  </div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+  const aloevera = document.querySelector(".aloevera");
+  const center = document.querySelector(".center");
+  const coconut_sliced = document.querySelector(".coconut_sliced");
+  const flower = document.querySelector(".flower");
+  const left = document.querySelector(".left");
+  const logo = document.querySelector(".logo");
+  const nut = document.querySelector(".nut");
+  const oil = document.querySelector(".oil");
+  const olives = document.querySelector(".olives");
+  const podium = document.querySelector(".podium");
+  const right = document.querySelector(".right");
+  const single_aloevera = document.querySelector(".single_aloevera");
+  const text1 = document.querySelector(".text1");
+  const text2 = document.querySelector(".text2");
+
+  const tl = gsap.timeline();
+
+  tl.from([podium, coconut_sliced, nut], {
+      duration: .3,
+      y: 80,
+      x: -50,
+      onStart: () => {
+        podium.style.display = "block";
+      },
+    })
+        .from(oil, {
+      duration: .9,
+      clipPath: "inset(0% 0% 0% 100%)",
+      ease: "power2.out",
+      onStart: () => {
+        oil.style.display = "block";
+      },
+    }, "-=.3")
+        .from([center,left,right], {
+      duration:.3,
+      y: -400,
+      onStart: () => {
+        center.style.display = "block";
+      },
+    }, "-=.9")
+        .from(logo, {
+      duration: .3,
+      y: -100,
+      onStart: () => {
+        logo.style.display = "block";
+      },
+    }, "-=.3")
+        .from([flower, aloevera], {
+      duration: .3,
+      y: 100,
+      onStart: () => {
+        flower.style.display = "block";
+      },
+    }, "-=.4")
+        .from(text1, {
+      duration: .5,
+      x: -300,
+      onStart: () => {
+        text1.style.display = "block";
+      },
+    }, "-=.3")
+    .from(text2, {
+      duration: .5,
+      x: 300,
+      onStart: () => {
+        text2.style.display = "block";
+      },
+    }, "-=.3")
+
+    .from([olives], {
+      duration: .5,
+      y: -100,
+      onStart: () => {
+        olives.style.display = "block";
+      },
+    }, "-=.4");
+    tl.to(left, {
+      rotation: 20,
+      
+      duration: 1.4,
+      ease: "power2.inOut",
+      onStart: () => {
+        left.style.display = "block";
+      }
+    }, "-=0.5");
+        tl.to(right, {
+      rotation: -20,
+      
+      duration: 1,
+      ease: "power2.inOut",
+      onStart: () => {
+        right.style.display = "block";
+      }
+    }, "-=1.15");
+        tl.to([left,right], {
+      rotation: 0,
+      
+      duration: 0.8,
+      ease: "power2.inOut",
+      onStart: () => {
+        left.style.display = "block";
+      }
+    }, "-=0.1");
+    
+
+    tl.to(left, {
+      x:30,
+      
+      duration: 1,
+      ease: "power2.inOut",
+      onStart: () => {
+        left.style.display = "block";
+      }
+    }, "-=0.5");
+      tl.to(right, {
+      x:-30,
+      duration: 1,
+      ease: "power2.inOut",
+      onStart: () => {
+        right.style.display = "block";
+      }
+    }, "-=0.9")
+    .to(single_aloevera,{
+      x:40,
+      duration: 1,
+      ease: "power2.inOut",
+      onStart: () => {
+        single_aloevera.style.display = "block";
+      }
+    }, "-=0.9")
+    
+
+
+
+      tl.call(() => {
+      gsap.to([center,left,right], {
+        duration: 1,
+        repeat: -1,
+        y:5,
+        yoyo: true,
+        ease: "sine.inOut"
+      })
+    })
+
+
+
+
+</script>
+
+</body>
+</html>
